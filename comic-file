@@ -1,0 +1,6 @@
+from docker.io/ubuntu
+run apt-get update -y && \
+    apt-get install apache2 -y
+copy . /var/www/html
+cmd ["apache2ctl","-D","FOREGROUND"]
+expose 80
